@@ -1,0 +1,66 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 210px;
+  background-color: #2b1a0e;
+  border: solid 3px #f4a261;
+  border-radius: 18px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardContainer:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #f4a261;
+}
+
+.cardContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.cardContainer:hover img {
+  transform: scale(1.05);
+}
+
+.nombreCocktail {
+  color: #f4a261;
+  text-shadow: 0 0 7px #f4a261;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cardContainer:hover .nombreCocktail {
+  text-shadow: 0 0 16px #f4a261;
+}
+
+.botonVer {
+  margin-top: 12px;
+  background-color: transparent;
+  color: #f4a261;
+  border: 2px solid #f4a261;
+  border-radius: 25px;
+  width: 120px;
+  height: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.botonVer:hover {
+  background-color: #f4a261;
+  color: #2b1a0e;
+  box-shadow: 0 0 20px #f4a261;
+  transform: translateY(-3px);
+}

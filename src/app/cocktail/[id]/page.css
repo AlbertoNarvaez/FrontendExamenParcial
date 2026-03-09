@@ -1,0 +1,126 @@
+.containerDetalle {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #2b1a0e, #0f0a05);
+  padding: 40px 20px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.containerDetalle h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #f4a261, #e76f51);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.containerDetalle img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.containerDetalle img:hover {
+  transform: scale(1.04);
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 25px 35px;
+  border-radius: 20px;
+  line-height: 2;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 520px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.infoCard p {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 0;
+}
+
+.infoCard p:last-child {
+  border-bottom: none;
+}
+
+.infoCard span {
+  color: #f4a261;
+  font-weight: bold;
+}
+
+.instrucciones {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 6px;
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #ccc;
+  max-width: 520px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.instrucciones h3 {
+  color: #f4a261;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ingredientesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.ingredienteTag {
+  background: rgba(244, 162, 97, 0.15);
+  border: 1px solid #f4a261;
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 12px;
+  color: #f4a261;
+}
+
+.botonVolver {
+  margin-top: 30px;
+  background-color: transparent;
+  color: #f4a261;
+  border: 2px solid #f4a261;
+  border-radius: 25px;
+  width: 150px;
+  height: 42px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+.botonVolver:hover {
+  background-color: #f4a261;
+  color: #2b1a0e;
+  box-shadow: 0 0 20px #f4a261;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
