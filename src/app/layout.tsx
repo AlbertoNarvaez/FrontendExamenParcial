@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { FavoritosProvider } from "@/context/favoritosContext";
 
 export const metadata: Metadata = {
   title: "Cocktail Explorer",
@@ -13,8 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <FavoritosProvider>
+          {children}
+        </FavoritosProvider>
+      </body>
     </html>
   );
 }
-

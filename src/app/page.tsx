@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 import "./globals.css";
 import "./page.css";
 import { Cocktail } from "@/types";
-import { CocktailCard } from "@/components/cocktail/page";
+import CocktailCard from "@/components/cocktail/page";
 import { searchCocktails } from "@/lib/api/searchCocktails";
 import { getRandomCocktail } from "@/lib/api/getRandomCocktail";
 import { useRouter } from "next/navigation";
+import { useFavoritos } from "@/context/favoritosContext";
 
 const Home = () => {
   const router = useRouter();
+  const { favoritos } = useFavoritos();
   const [inputName, setInputName] = useState<string>("");
   const [search, setSearch] = useState<string>("");
   const [cocktails, setCocktails] = useState<Cocktail[]>([]);
@@ -55,7 +57,7 @@ const Home = () => {
   return (
     <div className="mainContainer">
       <h1 className="tituloPrincipal">Cocktail Explorer</h1>
-      <h2 className="subtitulo">Busca cualquier cocktail que se te ocurra, 200% que lo tenemos</h2>
+      <p className="subtitulo">Intenta no bebertelos todos jejejeje</p>
 
       <form
         className="buscador"
@@ -82,9 +84,12 @@ const Home = () => {
         <button className="botonAleatorio" onClick={handleAleatorio}>
           Dime algo bonito
         </button>
+        <button onClick={() => router.push("/favoritos")}>
+          Favoritos ({favoritos.length})
+        </button>
       </div>
 
-      {loading && <h2>Buscando...</h2>}
+      {loading && <h2>Loading...</h2>}
       {miError && <h2>{miError}</h2>}
 
       {!loading && cocktails.length > 0 && (
@@ -97,7 +102,7 @@ const Home = () => {
             <CocktailCard key={c.idDrink} cocktail={c} />
           ))
         ) : (
-          !loading && search && <p className="noResultados">No se han encontrado cocktails con ese nombre, probablemente ni exista.</p>
+          !loading && search && <p className="noResultados">No se han encontrado cocktails</p>
         )}
       </div>
     </div>
